@@ -1,6 +1,6 @@
 # Fetch File
 
-Quick trait to just impl on struct to turn it into a quick config file. Json, Ron, or Bincode can be used.
+Quick trait to impl struct to turn it into a quick config file. Json, Ron, or Bincode can be used.
 
 ```rust
 use std::env;
