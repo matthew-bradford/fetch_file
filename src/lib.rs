@@ -12,7 +12,7 @@ use std::path::PathBuf;
 use ron::de::from_str;
 use serde::de::DeserializeOwned;
 
-///
+/// #
 /// # Fetch
 ///
 /// Simple trait that can be implemented on structs/enums for
@@ -81,23 +81,31 @@ use serde::de::DeserializeOwned;
 /// ```
 ///
 pub trait Fetchable {
+    /// #
     ///
-    /// # Impl method
+    /// # Parameters
+    ///
+    /// f_path: Path to file to open /path/to/your/file.txt
     ///
     /// Impl this method to define behavior.
+    ///
+    /// T::deserialize_json
     ///
     fn deserialize_l<T: DeserializeOwned + Default + Fetchable>(
         f_path: &PathBuf,
     ) -> Result<T, Box<dyn Error>>;
 
-    ///
-    /// # Bin
+    /// #
     ///
     /// Deserialize from bincode format.
     ///
-    /// * f_path: Path to file to open /home/$USER/folder/file.txt
+    /// # Parameters
     ///
-    /// * Panics if it fails to open file.
+    /// f_path: Path to file to open /path/to/your/file.txt
+    ///
+    /// # Panics
+    ///
+    /// If File::open fails
     ///
     fn deserialize_bin<T>(f_path: &PathBuf) -> Result<T, Box<dyn Error>>
         where T: DeserializeOwned + Default {
@@ -112,14 +120,17 @@ pub trait Fetchable {
         Ok(item)
     }
 
-    ///
-    /// # Json
+    /// #
     ///
     /// Deserialize from Json format.
     ///
-    /// * f_path: Path to file to open /home/$USER/folder/file.txt
+    /// # Parameters
     ///
-    /// * Panics if it fails to open file.
+    /// f_path: Path to file to open /path/to/your/file.txt
+    ///
+    /// # Panics
+    ///
+    /// Panics if File::open fails
     ///
     fn deserialize_json<T>(f_path: &PathBuf) -> Result<T, Box<dyn Error>>
         where T: DeserializeOwned + Default {
@@ -134,14 +145,17 @@ pub trait Fetchable {
         Ok(item)
     }
 
-    ///
-    /// # RON
+    /// #
     ///
     /// Deserialize from ron format.
     ///
-    /// * f_path: Path to file to open /home/$USER/folder/file.txt
+    /// # Parameters
     ///
-    /// * Panics if it fails to open file.
+    /// f_path: Path to file to open /home/$USER/folder/file.txt
+    ///
+    /// # Panics
+    ///
+    /// Panics if File::open fails
     ///
     fn deserialize_ron<T>(f_path: &PathBuf) -> Result<T, Box<dyn Error>>
         where T: DeserializeOwned + Default {
@@ -156,6 +170,7 @@ pub trait Fetchable {
         Ok(item)
     }
 
+    /// #
     ///
     /// # Impl method
     ///
@@ -165,6 +180,7 @@ pub trait Fetchable {
     where
         Self: serde::Serialize + Fetchable;
 
+    /// #
     ///
     /// # Bin
     ///
@@ -178,6 +194,7 @@ pub trait Fetchable {
         Ok(buf)
     }
 
+    /// #
     ///
     /// # RON
     ///
@@ -193,6 +210,7 @@ pub trait Fetchable {
         )
     }
 
+    /// #
     ///
     /// # Json
     ///
@@ -208,6 +226,7 @@ pub trait Fetchable {
         )
     }
 
+    /// #
     ///
     /// # Save
     ///
@@ -226,9 +245,11 @@ pub trait Fetchable {
         }
     }
 
+    /// #
     ///
     /// Fetch an item serialized to file
-    /// # Arguments
+    ///
+    /// # Parameters
     ///
     /// * `file_path` - Reference to path buffer of file of type T
     ///

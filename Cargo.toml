@@ -3,6 +3,11 @@ name = "fetch_file"
 version = "0.1.0"
 authors = ["matthew.bradford <matthew.bradford@tutanota.com>"]
 edition = "2018"
+license = "MIT"
+repository = "https://github.com/matthew-bradford/fetch_file"
+description = """
+Use a struct for a quick config file
+"""
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
