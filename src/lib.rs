@@ -71,7 +71,7 @@ use serde::de::DeserializeOwned;
 ///     // config is default.
 ///     let config: (Config, bool) = Config::fetch_or_default(&path)?;
 ///     if config.1 {
-///         config.0.save(&path);
+///         //config.0.save(&path);
 ///     }
 ///     let config = config.0;
 ///     println!("Config: {}, {}", config.setting1, config.setting2);
