@@ -12,7 +12,7 @@ Use a struct for a quick config file
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bincode = "1.1.1"
-ron = "0.4.1"
-serde = { version="*", features=["serde_derive"] }
+bincode = "1.1.4"
+ron = "0.5.1"
+serde = { version="1.0.101", features=["serde_derive"] }
 serde_json = "1.0.40"
