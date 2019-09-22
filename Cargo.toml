@@ -1,10 +1,11 @@
 [package]
 name = "fetch_file"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["matthew.bradford <matthew.bradford@tutanota.com>"]
 edition = "2018"
 license = "MIT"
 repository = "https://github.com/matthew-bradford/fetch_file"
+readme = "README.md"
 description = """
 Use a struct for a quick config file
 """
